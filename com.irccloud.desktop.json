@@ -97,7 +97,8 @@
         {
           "type": "script",
           "commands": [
-            "exec /app/irccloud/irccloud --no-sandbox \"$@\""
+            "export TMPDIR=\"$XDG_RUNTIME_DIR/app/$FLATPAK_ID\"",
+            "exec zypak-wrapper/app/irccloud/irccloud \"$@\""
           ],
           "dest-filename": "irccloud"
         },
