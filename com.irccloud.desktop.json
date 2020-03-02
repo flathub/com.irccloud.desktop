@@ -6,7 +6,7 @@
   "base": "org.electronjs.Electron2.BaseApp",
   "base-version": "19.08",
   "sdk-extensions": [
-    "org.freedesktop.Sdk.Extension.node10"
+    "org.freedesktop.Sdk.Extension.node12"
   ],
   "command": "irccloud",
   "separate-locales": false,
@@ -38,38 +38,38 @@
     {
       "name": "libopenjpeg",
       "buildsystem": "cmake-ninja",
+      "cleanup": [
+        "*"
+      ],
       "sources": [
         {
           "type": "archive",
           "url": "https://github.com/uclouvain/openjpeg/archive/v2.3.1.tar.gz",
           "sha256": "63f5a4713ecafc86de51bfad89cc07bb788e9bba24ebbf0c4ca637621aadb6a9"
         }
-      ],
-      "cleanup": [
-        "*"
       ]
     },
     {
       "name": "icns",
+      "cleanup": [
+        "*"
+      ],
       "sources": [
         {
           "type": "git",
           "url": "https://git.code.sf.net/p/icns/code",
           "commit": "194962"
         }
-      ],
-      "cleanup": [
-        "*"
       ]
     },
     {
       "name": "irccloud",
       "buildsystem": "simple",
       "build-options": {
-        "append-path": "/usr/lib/sdk/node10/bin:/app/yarn/bin",
+        "append-path": "/usr/lib/sdk/node12/bin:/app/yarn/bin",
         "env": {
           "ELECTRON_CACHE": "/run/build/irccloud/flatpak-node/electron-cache",
-          "npm_config_nodedir": "/usr/lib/sdk/node10"
+          "npm_config_nodedir": "/usr/lib/sdk/node12"
         }
       },
       "build-commands": [
@@ -80,15 +80,17 @@
         "icns2png -x -o . build/icon.icns",
         "for x in 32 48 128 256 512; do install -Dm644 icon_${x}x${x}x32.png /app/share/icons/hicolor/${x}x${x}/apps/${FLATPAK_ID}.png; done",
         "install -Dm755 irccloud /app/bin/irccloud",
-        "install -Dm644 irccloud.desktop /app/share/applications/${FLATPAK_ID}.desktop",
-        "install -Dm644 irccloud.metainfo.xml /app/share/metainfo/${FLATPAK_ID}.metainfo.xml"
+        "install -Dm644 irccloud.metainfo.xml /app/share/metainfo/${FLATPAK_ID}.metainfo.xml",
+        "install -Dm644 build/irccloud.desktop /app/share/applications/${FLATPAK_ID}.desktop",
+        "desktop-file-edit --set-key=Exec --set-value=irccloud /app/share/applications/${FLATPAK_ID}.desktop",
+        "desktop-file-edit --set-icon=${FLATPAK_ID} /app/share/applications/${FLATPAK_ID}.desktop"
       ],
       "sources": [
         "generated-sources.json",
         {
           "type": "git",
           "url": "https://github.com/irccloud/irccloud-desktop",
-          "commit": "ab9fae2ce66cd089d167f2488f5aaf79e0002af9"
+          "commit": "a78ebd4effad8c9de53612a8a77e0fab8128d757"
         },
         {
           "type": "patch",
@@ -101,10 +103,6 @@
             "exec zypak-wrapper /app/irccloud/irccloud \"$@\""
           ],
           "dest-filename": "irccloud"
-        },
-        {
-          "type": "file",
-          "path": "irccloud.desktop"
         },
         {
           "type": "file",
