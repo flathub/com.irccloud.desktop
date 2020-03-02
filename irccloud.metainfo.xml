@@ -13,7 +13,7 @@
     <p>You’ll stay connected to IRC, even if the app isn't running or your device is offline. When you return to the app, you can see and respond to any new messages received since the last time you were online.</p>
     <p>IRCCloud works across multiple devices—your messages are automatically kept in sync for a seamless experience wherever you are.</p>
   </description>
-  <url type="homepage">https://irccloud.com</url>
+  <url type="homepage">https://www.irccloud.com</url>
   <url type="bugtracker">https://github.com/irccloud/irccloud-desktop</url>
   <screenshots>
     <screenshot type="default">
