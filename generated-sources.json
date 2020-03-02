@@ -3247,9 +3247,9 @@
     },
     {
         "type": "file",
-        "url": "https://registry.yarnpkg.com/snyk/-/snyk-1.297.1.tgz#06b5e5892bb280088fde5b7ca1b298845b9387bb",
-        "sha512": "a3e05f185ae011d928f1359b6543dce8b65707a31ad1facbec0f36bb3d12a04e7f74c1d8363f24a3d709f0051fde40d9f49a0cbae403567e143c701f7df52434",
-        "dest-filename": "snyk-1.297.1.tgz",
+        "url": "https://registry.yarnpkg.com/snyk/-/snyk-1.297.3.tgz#f62b86c40bb4dab15d724bddb284ebb180450a09",
+        "sha512": "949d105afb2dfab5fe6fda69b8094fc481a6250b2c00e69f3c0b33a19ddce000b8d88f24b3c5abd3863d1c99c0d98ee43b749c888a426ae2f54a0de59355c713",
+        "dest-filename": "snyk-1.297.3.tgz",
         "dest": "flatpak-node/yarn-mirror"
     },
     {
