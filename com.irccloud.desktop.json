@@ -90,7 +90,7 @@
         {
           "type": "git",
           "url": "https://github.com/irccloud/irccloud-desktop",
-          "commit": "1afb8463ece3b941c61c426e7a368cb6b5b5beb3"
+          "commit": "5cbe31144ccdf002c7eda9124a8be794efba9bf7"
         },
         {
           "type": "patch",
