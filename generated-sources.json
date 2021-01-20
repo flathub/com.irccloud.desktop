@@ -1,17 +1,30 @@
 [
     {
+        "type": "archive",
+        "url": "https://www.electronjs.org/headers/v11.2.0/node-v11.2.0-headers.tar.gz",
+        "strip-components": 1,
+        "sha256": "9b22347eab9c1d668386110b9628af955d528fffee20dd3c57dad429ea4e9b57",
+        "dest": "flatpak-node/cache/node-gyp/11.2.0"
+    },
+    {
+        "type": "file",
+        "url": "data:9",
+        "dest-filename": "installVersion",
+        "dest": "flatpak-node/cache/node-gyp/11.2.0"
+    },
+    {
         "type": "file",
         "url": "https://github.com/electron/electron/releases/download/v11.2.0/SHASUMS256.txt",
         "sha256": "6d1ce877769ad46abfc88cc16b51d03c56d4f0171a8020d2cb01e77c98c4f9e4",
         "dest-filename": "SHASUMS256.txt-11.2.0",
-        "dest": "flatpak-node/electron-cache"
+        "dest": "flatpak-node/cache/electron"
     },
     {
         "type": "file",
         "url": "https://github.com/electron/electron/releases/download/v11.2.0/electron-v11.2.0-linux-arm64.zip",
         "sha256": "ed8e318ce0ba92058efdc667790bcbfce1c7f888f9d94038c1c76ed8678158fc",
         "dest-filename": "electron-v11.2.0-linux-arm64.zip",
-        "dest": "flatpak-node/electron-cache",
+        "dest": "flatpak-node/cache/electron",
         "only-arches": [
             "aarch64"
         ]
@@ -21,7 +34,7 @@
         "url": "https://github.com/electron/electron/releases/download/v11.2.0/electron-v11.2.0-linux-armv7l.zip",
         "sha256": "edf1ad6606eab5efc1c9a33ce16489dae1df21ce6e69166f4c8da27ca6fde2ca",
         "dest-filename": "electron-v11.2.0-linux-armv7l.zip",
-        "dest": "flatpak-node/electron-cache",
+        "dest": "flatpak-node/cache/electron",
         "only-arches": [
             "arm"
         ]
@@ -31,7 +44,7 @@
         "url": "https://github.com/electron/electron/releases/download/v11.2.0/electron-v11.2.0-linux-ia32.zip",
         "sha256": "508b9276f97c66418e530cbfa584701d4b0a42825fb2519b21ff161db1dc121f",
         "dest-filename": "electron-v11.2.0-linux-ia32.zip",
-        "dest": "flatpak-node/electron-cache",
+        "dest": "flatpak-node/cache/electron",
         "only-arches": [
             "i386"
         ]
@@ -41,7 +54,7 @@
         "url": "https://github.com/electron/electron/releases/download/v11.2.0/electron-v11.2.0-linux-x64.zip",
         "sha256": "a2ed11a5ec9ad10302053e5e2bdf2abf0f9bac521e4f80a377308bffe8c24c00",
         "dest-filename": "electron-v11.2.0-linux-x64.zip",
-        "dest": "flatpak-node/electron-cache",
+        "dest": "flatpak-node/cache/electron",
         "only-arches": [
             "x86_64"
         ]
@@ -4532,5 +4545,45 @@
         ],
         "dest-filename": "electron-builder-arch-args.sh",
         "dest": "flatpak-node"
+    },
+    {
+        "type": "shell",
+        "commands": [
+            "ln -s \"../electron-v11.2.0-linux-arm64.zip\" \"electron-v11.2.0-linux-arm64.zip\""
+        ],
+        "dest": "flatpak-node/cache/electron/httpsgithub.comelectronelectronreleasesdownloadv11.2.0electron-v11.2.0-linux-arm64.zip",
+        "only-arches": [
+            "aarch64"
+        ]
+    },
+    {
+        "type": "shell",
+        "commands": [
+            "ln -s \"../electron-v11.2.0-linux-armv7l.zip\" \"electron-v11.2.0-linux-armv7l.zip\""
+        ],
+        "dest": "flatpak-node/cache/electron/httpsgithub.comelectronelectronreleasesdownloadv11.2.0electron-v11.2.0-linux-armv7l.zip",
+        "only-arches": [
+            "arm"
+        ]
+    },
+    {
+        "type": "shell",
+        "commands": [
+            "ln -s \"../electron-v11.2.0-linux-ia32.zip\" \"electron-v11.2.0-linux-ia32.zip\""
+        ],
+        "dest": "flatpak-node/cache/electron/httpsgithub.comelectronelectronreleasesdownloadv11.2.0electron-v11.2.0-linux-ia32.zip",
+        "only-arches": [
+            "i386"
+        ]
+    },
+    {
+        "type": "shell",
+        "commands": [
+            "ln -s \"../electron-v11.2.0-linux-x64.zip\" \"electron-v11.2.0-linux-x64.zip\""
+        ],
+        "dest": "flatpak-node/cache/electron/httpsgithub.comelectronelectronreleasesdownloadv11.2.0electron-v11.2.0-linux-x64.zip",
+        "only-arches": [
+            "x86_64"
+        ]
     }
 ]
