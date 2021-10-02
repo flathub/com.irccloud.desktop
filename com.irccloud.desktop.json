@@ -1,10 +1,10 @@
 {
   "app-id": "com.irccloud.desktop",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "19.08",
+  "runtime-version": "21.08",
   "sdk": "org.freedesktop.Sdk",
   "base": "org.electronjs.Electron2.BaseApp",
-  "base-version": "19.08",
+  "base-version": "21.08",
   "sdk-extensions": [
     "org.freedesktop.Sdk.Extension.node12"
   ],
